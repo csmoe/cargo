@@ -25,6 +25,7 @@ pub fn cli() -> App {
             "Build all targets",
         )
         .arg_release("Build artifacts in release mode, with optimizations")
+        .arg_pgo("Build aritfacts in release mode, with profile-guide-optimization")
         .arg_features()
         .arg_target_triple("Build for the target triple")
         .arg_target_dir()

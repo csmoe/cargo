@@ -107,6 +107,10 @@ pub trait AppExt: Sized {
         self._arg(opt("release", release))
     }
 
+    fn arg_pgo(self, pgo: &'static str) -> Self {
+        self._arg(opt("pgo", pgo))
+    }
+
     fn arg_doc(self, doc: &'static str) -> Self {
         self._arg(opt("doc", doc))
     }
@@ -371,7 +375,7 @@ pub trait ArgMatchesExt {
                     Ok(None)
                 }
                 else {
-                    Ok(Some(registry.to_string()))                    
+                    Ok(Some(registry.to_string()))
                 }
             }
             None => {
